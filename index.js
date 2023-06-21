@@ -58,41 +58,36 @@ export function postCSSImport({ recursive = true, resolveUrls = true } = {}) {
 						);
 
 					// supports -> media -> layer (inverse order)
+					// @TODO Figure out how to indent
 					if (typeof supports === 'string') {
-						const supportsNode = PostCSS.atRule({
+						node = PostCSS.atRule({
 							name: 'supports',
 							params: `(${supports})`,
+							nodes: [node],
 							source: atRule.source,
 						});
-
-						supportsNode.append(node);
-						node = supportsNode;
 					} else {
 						node.source = atRule.source;
 					}
 
 					if (typeof media === 'string') {
-						const mediaNode = PostCSS.atRule({
+						node = PostCSS.atRule({
 							name: 'media',
 							params: media,
+							nodes: [node],
 							source: node.source,
 						});
-
-						mediaNode.append(node);
-						node = mediaNode;
 					} else {
 						node.source = atRule.source;
 					}
 
 					if (typeof layer === 'string') {
-						const layerNode = PostCSS.atRule({
+						node = PostCSS.atRule({
 							name: 'layer',
 							params: layer,
+							nodes: [node],
 							source: node.source,
 						});
-
-						layerNode.append(node);
-						node = layerNode;
 					} else {
 						node.source = atRule.source;
 					}
