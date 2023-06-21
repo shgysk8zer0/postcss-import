@@ -1,7 +1,10 @@
-@import url("https://cdn.kernvalley.us/css/core-css/fonts.css") screen;
-@import url("./external.css") layer(print) supports(display: flex) screen and (min-width: 10px);
-@import url("https://cdn.kernvalley.us/css/core-css/class-rules.css");
+@layer fonts, extern, class-rules, custom;
+@import url("https://cdn.kernvalley.us/css/core-css/fonts.css") layer(fonts) screen;
+@import url("./external.css") layer(extern) supports(display: flex) screen and (min-width: 10px);
+@import url("https://cdn.kernvalley.us/css/core-css/class-rules.css") layer(class-rules);
 
-.test {
-	color: red;
+@layer custom {
+	.test {
+		color: red;
+	}
 }
