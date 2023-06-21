@@ -1,6 +1,6 @@
 {
   "name": "@shgysk8zer0/postcss-import",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Plug-in for importing local & remote stylesheets with PostCSS ",
   "keywords": [
     "postcss",
@@ -13,7 +13,7 @@
   "main": "plugin.cjs",
   "module": "plugin.js",
   "exports": {
-    "./": {
+    ".": {
       "import": "./plugin.js",
       "require": "./plugin.cjs"
     },
