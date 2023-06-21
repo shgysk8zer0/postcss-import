@@ -4,7 +4,7 @@ export default getConfig('./index.js', {
 	format: 'cjs',
 	minify: false,
 	sourcemap: false,
-	external: [],
+	external: ['postcss', 'node:fs/promises'],
 	plugins: [],
 	globals: {},
 });

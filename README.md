@@ -1,2 +1,2 @@
-# npm-template
-A template repo for npm packages
+# @shgysk8zer0/postcss-import
+Plug-in for importing local & remote stylesheets with PostCSS

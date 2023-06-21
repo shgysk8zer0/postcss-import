@@ -1,14 +1,14 @@
 {
-  "name": "npm-template",
-  "version": "1.0.4",
-  "description": "A template repo for npm packages",
+  "name": "@shgysk8zer0/postcss-import",
+  "version": "1.0.0",
+  "description": "Plug-in for importing local & remote stylesheets with PostCSS ",
   "type": "module",
   "main": "index.cjs",
   "module": "index.js",
   "exports": {
-    "./*": {
-      "import": "./*.js",
-      "require": "./*.cjs"
+    "./": {
+      "import": "./index.js",
+      "require": "./index.cjs"
     }
   },
   "engines": {
@@ -16,14 +16,15 @@
   },
   "private": false,
   "scripts": {
-    "test": "npm run lint:js && npm run build",
+    "test": "npm run lint:js && npm run lint:css && npm run build:css",
     "preversion": "npm test",
     "prepare": "npm run build",
-    "dev": "rollup -cw",
     "lint:js": "eslint .",
+    "lint:css": "stylelint './**.css'",
     "fix:js": "eslint. --fix",
     "build": "npm run build:js",
     "build:js": "rollup -c rollup.config.js",
+    "build:css": "postcss test/index.css -o test/index.min.css",
     "create:lock": "npm i --package-lock-only",
     "version:bump": "npm run version:bump:patch",
     "version:bump:patch": "npm version --no-git-tag-version patch",
@@ -32,15 +33,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shgysk8zer0/npm-template.git"
+    "url": "git+https://github.com/shgysk8zer0/postcss-import.git"
   },
   "author": "Chris Zuber <admin@kernvalley.us>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shgysk8zer0/npm-template/issues"
+    "url": "https://github.com/shgysk8zer0/postcss-import/issues"
   },
-  "homepage": "https://github.com/shgysk8zer0/npm-template#readme",
+  "homepage": "https://github.com/shgysk8zer0/postcss-import#readme",
   "devDependencies": {
-    "@shgysk8zer0/js-utils": "^1.0.0"
+    "@shgysk8zer0/js-utils": "^1.0.0",
+    "postcss": "^8.4.24",
+    "postcss-cli": "^10.1.0",
+    "stylelint": "^15.8.0"
+  },
+  "dependencies": {
+    "@shgysk8zer0/npm-utils": "^1.0.5"
   }
 }
