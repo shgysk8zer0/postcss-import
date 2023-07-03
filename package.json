@@ -1,6 +1,6 @@
 {
   "name": "@shgysk8zer0/postcss-import",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Plug-in for importing local & remote stylesheets with PostCSS ",
   "keywords": [
     "postcss",
@@ -35,11 +35,11 @@
     "build": "npm run build:js",
     "build:js": "rollup -c rollup.config.js",
     "build:css": "postcss test/index.css -o test/index.min.css",
-    "create:lock": "npm i --package-lock-only",
+    "create:lock": "npm i --package-lock-only --ignore-scripts --no-audit --no-fund",
     "version:bump": "npm run version:bump:patch",
-    "version:bump:patch": "npm version --no-git-tag-version patch",
-    "version:bump:minor": "npm version --no-git-tag-version minor",
-    "version:bump:major": "npm version --no-git-tag-version major"
+    "version:bump:patch": "npm version --no-git-tag-version patch && npm run create:lock",
+    "version:bump:minor": "npm version --no-git-tag-version minor && npm run create:lock",
+    "version:bump:major": "npm version --no-git-tag-version major && npm run create:lock"
   },
   "repository": {
     "type": "git",
