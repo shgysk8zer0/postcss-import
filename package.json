@@ -64,7 +64,7 @@
   "devDependencies": {
     "@shgysk8zer0/js-utils": "^1.0.0",
     "postcss": "^8.4.24",
-    "postcss-cli": "^10.1.0",
+    "postcss-cli": "^11.0.0",
     "stylelint": "^15.8.0"
   },
   "dependencies": {
