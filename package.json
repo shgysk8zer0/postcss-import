@@ -17,8 +17,13 @@
       "import": "./plugin.js",
       "require": "./plugin.cjs"
     },
+    "./*.js": {
+      "import": "./*.js",
+      "require": "./*.js"
+    },
     "./*": {
-      "import": "./*.js"
+      "import": "./*.js",
+      "require": "./*.cjs"
     }
   },
   "engines": {
@@ -26,9 +31,9 @@
   },
   "private": false,
   "scripts": {
-    "test": "npm run lint:js && npm run lint:css && npm run build:css",
-    "preversion": "npm test",
-    "prepare": "npm run build",
+    "test": "npm run lint:js && npm run lint:css",
+    "preversion": "npm test && npm run builc",
+    "prepare": "npm test && npm run build",
     "lint:js": "eslint .",
     "lint:css": "stylelint './**.css'",
     "fix:js": "eslint. --fix",
@@ -62,6 +67,7 @@
   ],
   "homepage": "https://github.com/shgysk8zer0/postcss-import#readme",
   "devDependencies": {
+    "@shgysk8zer0/eslint-config": "^1.0.1",
     "@shgysk8zer0/js-utils": "^1.0.0",
     "postcss": "^8.4.24",
     "postcss-cli": "^11.0.0",
