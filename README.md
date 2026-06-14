@@ -15,9 +15,9 @@ npm i @shgysk8zer0/postcss-import
 import postCSSImport from '@shgysk8zer0/postcss-import';
 
 export default {
-	map: { inline: false },
-	plugins: [
-	  postCSSImport({ resolveUrls: true, recursive: true }),
-	]
+  map: { inline: false },
+  plugins: [
+    postCSSImport({ resolveUrls: true, recursive: true }),
+  ]
 };
 ```
