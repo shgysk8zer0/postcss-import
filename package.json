@@ -71,7 +71,7 @@
     "@shgysk8zer0/js-utils": "^1.0.6",
     "postcss": "^8.5.15",
     "postcss-cli": "^12.0.0",
-    "stylelint": "^17.13.0"
+    "stylelint": "^18.0.0"
   },
   "dependencies": {
     "@shgysk8zer0/npm-utils": "^1.2.0"
